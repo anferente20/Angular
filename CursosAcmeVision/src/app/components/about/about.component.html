@@ -2,14 +2,14 @@
     <thead>
         <tr>
             <th *ngFor="let curso of cursos" scope="col">
-                <div *ngIf="inscrito === true" class="card" style="width: 18rem;">
+                <div *ngIf="curso.estado == true" class="card" style="width: 18rem;">
                     <img [src]="curso.img" class="card-img-top">
                     <div class="card-body">
                         <p class="card-text">{{curso.nombre}}</p>
                     </div>
                 </div>
-                <button *ngIf="inscrito == false" type="button" (click)="inscribirse()" class=" btn btn-dark "> Inscribirse a {{curso.nombre}}  </button>
-                <button *ngIf="inscrito==true " type="button" (click)="inscribirse()" class=" btn btn-danger "> Darse de Baja de {{curso.nombre}} </button>
+                <button *ngIf="curso.estado == false" type="button" (click)="curso.estado = !curso.estado" class=" btn btn-dark "> Inscribirse a {{curso.nombre}}  </button>
+                <button *ngIf="curso.estado == true " type="button" (click)="curso.estado = !curso.estado" class=" btn btn-danger "> Darse de Baja de {{curso.nombre}} </button>
             </th>
         </tr>
     </thead>
