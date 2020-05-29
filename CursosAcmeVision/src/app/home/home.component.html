@@ -1,14 +1,10 @@
-<table class="table table-borderless">
-    <thead>
-        <tr>
-            <th *ngFor="let curso of cursos" scope="col">
-                <div class="card" style="width: 18rem;">
-                    <img [src]="curso.img" class="card-img-top">
-                    <div class="card-body">
-                        <p class="card-text">{{curso.nombre}}</p>
-                    </div>
-                </div>
-            </th>
-        </tr>
-    </thead>
-</table>
+<div class="row">
+    <div class="col" *ngFor="let curso of cursos">
+        <div class="card" style="width: 18rem;">
+            <img [src]="curso.img" class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">{{curso.nombre}}</p>
+            </div>
+        </div>
+    </div>
+</div>
